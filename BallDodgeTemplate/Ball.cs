@@ -10,28 +10,78 @@ namespace BallDodgeTemplate
 {
     internal class Ball
     {
-        string type;
+        int[] plusOrMinus = new int[2] { 1, -1 };
         int xDir, yDir;
         double xSpeed, ySpeed;
-
+        public SolidBrush brush;
         public Rectangle rectangle;
 
+        int speedBoost = 0;
         double time;
-        public Ball(string _type, int x, int y, int _size)
+        
+        double stunTimeStart;
+        const double STUN_TIME_DURATION = 5;  
+        public Ball(Color color, int x, int y, int xRandom, int yRandom, double timeRandom)
         {
-            type = _type;
-            rectangle = new Rectangle(x, y, _size, _size);
+            int size = 10;
+            rectangle = new Rectangle(x, y, size, size);
+            xDir = plusOrMinus[xRandom];
+            yDir = plusOrMinus[yRandom];
+            xSpeed = ySpeed = 2.5;
+            
+            time += timeRandom;
 
-            xDir = yDir = 1;
-            xSpeed = ySpeed = 1.5;
+            brush = new SolidBrush(color);
+
         }
 
-        public void Move()
+        Rectangle SinMove()
         {
-            time += 0.1;
+            Rectangle ghostRectangle = rectangle;
+            ghostRectangle.X += (Int32)(xDir * ((Math.Sin(time + 2) + 1) * (xSpeed + speedBoost)));
+            ghostRectangle.Y += (Int32)(yDir * ((Math.Sin(time) + 1) * (ySpeed + speedBoost)));
 
-            rectangle.X += (Int32)(xDir * (Math.Sin(time) * xSpeed));
-            rectangle.Y += (Int32)(yDir * (Math.Sin(time) * ySpeed));
+            return ghostRectangle;
         }
+
+        public void Collisions()
+        {
+            if (speedBoost > 0) 
+            {
+                speedBoost--;
+            }
+            time += 0.15;
+            Rectangle ghostRectangle = SinMove();
+
+            if ((ghostRectangle.Y > (GameScreen.height - ghostRectangle.Height)) || (ghostRectangle.Y <= 0))
+            {
+                yDir *= -1;
+            }
+            if ((ghostRectangle.X > (GameScreen.width - ghostRectangle.Width)) || (ghostRectangle.X <= 0))
+            {
+                xDir *= -1;
+            }
+
+            rectangle = SinMove();
+        }
+
+        public void ReverseDirections(Rectangle playerRectangle) 
+        {
+            ySpeed *= -1;
+            xDir *= -1;
+
+            speedBoost += 5;
+        }
+
+        public bool checkStunTime() 
+        {
+            if (time - stunTimeStart > STUN_TIME_DURATION)
+            {
+                stunTimeStart = time;
+                return (true);
+            }
+            return false;
+        }
+
     }
 }

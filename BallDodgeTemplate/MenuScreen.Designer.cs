@@ -38,22 +38,24 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Font = new System.Drawing.Font("Gadugi", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Red;
-            this.titleLabel.Location = new System.Drawing.Point(197, 29);
+            this.titleLabel.Location = new System.Drawing.Point(226, 66);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(197, 37);
+            this.titleLabel.Size = new System.Drawing.Size(335, 56);
             this.titleLabel.TabIndex = 7;
-            this.titleLabel.Text = "Ball Dodge";
+            this.titleLabel.Text = "SELECT MODE";
             // 
             // exitButton
             // 
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.Black;
-            this.exitButton.Location = new System.Drawing.Point(464, 417);
+            this.exitButton.Location = new System.Drawing.Point(620, 520);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(115, 57);
+            this.exitButton.Size = new System.Drawing.Size(153, 70);
             this.exitButton.TabIndex = 3;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             this.easyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.easyButton.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.easyButton.ForeColor = System.Drawing.Color.Black;
-            this.easyButton.Location = new System.Drawing.Point(238, 122);
+            this.easyButton.Location = new System.Drawing.Point(317, 150);
+            this.easyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.easyButton.Name = "easyButton";
-            this.easyButton.Size = new System.Drawing.Size(115, 57);
+            this.easyButton.Size = new System.Drawing.Size(153, 70);
             this.easyButton.TabIndex = 0;
             this.easyButton.Text = "Easy";
             this.easyButton.UseVisualStyleBackColor = true;
@@ -77,9 +80,10 @@
             this.hardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hardButton.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hardButton.ForeColor = System.Drawing.Color.Black;
-            this.hardButton.Location = new System.Drawing.Point(238, 267);
+            this.hardButton.Location = new System.Drawing.Point(317, 329);
+            this.hardButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.hardButton.Name = "hardButton";
-            this.hardButton.Size = new System.Drawing.Size(115, 57);
+            this.hardButton.Size = new System.Drawing.Size(153, 70);
             this.hardButton.TabIndex = 2;
             this.hardButton.Text = "Hard";
             this.hardButton.UseVisualStyleBackColor = true;
@@ -90,9 +94,10 @@
             this.mediumButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mediumButton.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mediumButton.ForeColor = System.Drawing.Color.Black;
-            this.mediumButton.Location = new System.Drawing.Point(238, 194);
+            this.mediumButton.Location = new System.Drawing.Point(317, 239);
+            this.mediumButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mediumButton.Name = "mediumButton";
-            this.mediumButton.Size = new System.Drawing.Size(115, 57);
+            this.mediumButton.Size = new System.Drawing.Size(153, 70);
             this.mediumButton.TabIndex = 1;
             this.mediumButton.Text = "Medium";
             this.mediumButton.UseVisualStyleBackColor = true;
@@ -100,7 +105,7 @@
             // 
             // MenuScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.Controls.Add(this.hardButton);
@@ -108,8 +113,9 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.easyButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuScreen";
-            this.Size = new System.Drawing.Size(600, 500);
+            this.Size = new System.Drawing.Size(800, 615);
             this.ResumeLayout(false);
             this.PerformLayout();
 

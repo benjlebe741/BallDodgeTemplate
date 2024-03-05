@@ -97,7 +97,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
-            this.Size = new System.Drawing.Size(600, 571);
+            this.Size = new System.Drawing.Size(600, 600);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameScreen_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyUp);
