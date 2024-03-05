@@ -133,8 +133,8 @@ namespace BallDodgeTemplate
 
         public void gameOver() 
         {
-            Form1.ChangeScreen(this, new GameOver());
-            //Form1.ChangeScreen(this, new GameScreen(1,1));
+            GameTimer.Enabled = false;
+            Form1.ChangeScreen(this, new GameOver(score));
         }
     }
 }

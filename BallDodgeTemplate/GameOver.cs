@@ -12,10 +12,20 @@ namespace BallDodgeTemplate
 {
     public partial class GameOver : UserControl
     {
-        public GameOver()
+        public GameOver(double _score)
         {
             InitializeComponent();
-            //scoreLabel.Text = _score.ToString();
+            scoreLabel.Text = _score.ToString();
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeScreen(this, new MenuScreen());
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
